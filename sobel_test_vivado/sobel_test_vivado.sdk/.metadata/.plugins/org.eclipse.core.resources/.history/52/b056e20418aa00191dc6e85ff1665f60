@@ -1,0 +1,91 @@
+/*********************************** Header Section *****************************************
+--
+-- NAME       : Yu Jin
+-- Date       : Aug, 2014
+-- E-mail     : yj3119@sina.com
+-- Address    : Department of Electrical Engineering, Jiangnan University
+
+-- Filename   : base.h
+-- Description: ARM and FPGA Share Data Function
+--
+*********************************** End Header Section***************************************/  
+#ifndef BASE_H
+#define BASE_H
+
+//Util Function
+#define REG_CHWRITE(addr, off, val)  (*(volatile unsigned char *)(addr + off) = (unsigned char)(val))
+#define REG_CHREAD(addr, off)  (*(volatile unsigned char *)(addr + off))
+#define REG_WRITE(addr, off, val) (*(volatile unsigned int *)(addr + off)) = (val)
+#define REG_READ(addr, off) (*(volatile unsigned int *)(addr + off))
+
+//#ifdef DEBUG_MODE
+    #define DEBUG_Text(fmt) printf(fmt)
+    #define DEBUG_printf(fmt, ...) printf(fmt, _VA_ARGS_)
+//#else
+    //#define DEBUG_Text(fmt)
+    //#define DEBUG_printf(fmt, ...)
+//#endif
+
+#define IN0()   DEBUG_printf(">> IN >> %s", _func_)
+#define OUT0()  DEBUG_printf("<< OUT << %s", _func_)
+
+#define XSOBEL_ENGINE_PHY_BASEADDR 0x43C00000
+
+// AXI4_Lite_Slave
+// 0x00 : Control signals
+//        bit 0  - ap_start (Read/Write/COH)
+//        bit 1  - ap_done (Read/COR)
+//        bit 2  - ap_idle (Read)
+//        bit 3  - ap_ready (Read)
+//        bit 7  - auto_restart (Read/Write)
+//        others - reserved
+// 0x04 : Global Interrupt Enable Register
+//        bit 0  - Global Interrupt Enable (Read/Write)
+//        others - reserved
+// 0x08 : IP Interrupt Enable Register (Read/Write)
+//        bit 0  - Channel 0 (ap_done)
+//        bit 1  - Channel 1 (ap_ready)
+//        others - reserved
+// 0x0c : IP Interrupt Status Register (Read/TOW)
+//        bit 0  - Channel 0 (ap_done)
+//        bit 1  - Channel 1 (ap_ready)
+//        others - reserved
+// 0x10 : reserved
+// 0x14 : Data signal of byte_rdoffset
+//        bit 31~0 - byte_rdoffset[31:0] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of byte_wroffset
+//        bit 31~0 - byte_wroffset[31:0] (Read/Write)
+// 0x20 : reserved
+// 0x24 : Data signal of rows
+//        bit 31~0 - rows[31:0] (Read/Write)
+// 0x28 : reserved
+// 0x2c : Data signal of cols
+//        bit 31~0 - cols[31:0] (Read/Write)
+// (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
+
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_AP_CTRL            0x00
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_GIE                0x04
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_IER                0x08
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ISR                0x0c
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_RDOFFSET_DATA 0x14
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_BITS_BYTE_RDOFFSET_DATA 32
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_WROFFSET_DATA 0x1c
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_BITS_BYTE_WROFFSET_DATA 32
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ROWS_DATA          0x24
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_BITS_ROWS_DATA          32
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_COLS_DATA          0x2c
+#define XSOBEL_FILTER_AXI4_LITE_SLAVE_BITS_COLS_DATA          32
+
+//Clear Memory
+void clearMemory(unsigned long startAddress, unsigned long size);
+
+//Write input data to AXI data stream
+void copy_mem2dev(unsigned char *R, unsigned char *G, unsigned char *B, int ncols, int nrows, unsigned long in_buffer);
+
+//Read output data from AXI data stream
+void copy_dev2mem(unsigned char *R, unsigned char *G, unsigned char *B, int ncols, int nrows, unsigned long out_buffer);
+
+
+
+#endif //BASE_H

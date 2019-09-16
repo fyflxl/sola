@@ -1,0 +1,74 @@
+[In] EB00 + DVN-4 = FFFF        
+OutDirect<smu0> E840+0 = 0     
+OutDirect<smu0> E840+1 = 0
+OutDirect<smu0> E840+2 = 0
+OutDirect<smu0> E840+3 = 0
+OutDirect<smu0> E840+4 = 0
+OutDirect<smu0> E840+5 = 0
+OutDirect<smu0> E840+6 = 0
+OutDirect<smu0> E840+7 = 0
+OutDirect<smu0> E840+8 = 83F
+OutDirect<smu0> E840+9 = 1
+OutDirect<smu0> E840+10 = F19
+OutDirect<smu0> E840+11 = 101
+OutDirect<smu0> E840+12 = D780
+OutDirect<smu0> E840+13 = 9E30
+OutDirect<smu0> E840+14 = 0
+OutDirect<smu0> E840+15 = 9F40
+OutDirect<smu0> E840+16 = 0
+OutDirect<smu0> E840+17 = 2710
+OutDirect<smu0> E840+18 = 0
+OutDirect<smu0> E840+19 = 0
+OutDirect<smu0> E840+20 = 0
+OutDirect<smu0> E840+21 = 0
+OutDirect<smu0> E840+22 = E000
+OutDirect<smu0> E840+23 = 200
+OutDirect<smu0> E840+24 = 40
+OutDirect<smu0> E840+25 = 0
+OutDirect<smu0> E840+26 = 0
+OutDirect<smu0> E840+27 = 0
+OutDirect<smu0> E840+28 = 0
+OutDirect<smu0> E840+29 = 0
+OutDirect<smu0> E840+30 = 0
+OutDirect<smu0> E840+31 = 0
+OutDirect<smu0> E840+31 = F000
+OutDirect<smu0> E840+8 = 800
+
+[MakeBiasValue]
+-I/V=0, value=7000, Range=C
+-converted value=D780
+
+OutDirect<smu0> E840+22 = E000
+OutDirect<smu0> E840+23 = 200
+OutDirect<smu0> E840+12 = D780
+OutDirect<smu0> E840+24 = 40
+OutDirect<smu0> E840+24 = 40
+
+[MakeLimiterValueFix] value=12DE, range=F
+bias->LimiterFixVal.Value=20000
+
+Converted value=9E30
+OutDirect<smu0> E840+13 = 9E30
+OutDirect<smu0> E840+22 = E000
+OutDirect<smu0> E840+8 = 800
+[MakeLimiterValueFix] value=1388, range=F
+bias->LimiterFixVal.Value=20000
+Converted value=9F40
+OutDirect<smu0> E840+15 = 9F40
+[In] EB00 + DVN-4 = FFFF
+[In] E840 + DVN-1 = 0
+OutDirect<smu0> E840+0 = 2000
+[ConvTiming] 10000, 2
+[ConvTiming] 5000, 2
+OutDirect<smu0> E840+10 = F32
+OutDirect<smu0> E840+10 = 1932
+OutDirect<smu0> E840+0 = 800
+OutDirect<bus0> EB00+1 = 2
+
+(FFFE ???)
+
+[In] E840 + DVN-3 = 1
+OutDirect<smu0> E840+0 = 2000
+[In] E840 + DVN-1 = 0
+[In] E840 + DVN-4 = 189B
+[ResolveRefTable] AD=189B

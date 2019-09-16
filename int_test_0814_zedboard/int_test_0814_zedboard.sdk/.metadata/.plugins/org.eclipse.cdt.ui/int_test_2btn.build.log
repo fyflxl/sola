@@ -1,0 +1,23 @@
+17:52:58 **** Auto Build of configuration Debug for project int_test_2btn ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../int_test_2btn_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: int_test_2btn.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../int_test_2btn_bsp/ps7_cortexa9_0/lib -o "int_test_2btn.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: int_test_2btn.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size int_test_2btn.elf  |tee "int_test_2btn.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  73988	   4156	  23344	 101488	  18c70	int_test_2btn.elf
+'Finished building: int_test_2btn.elf.size'
+' '
+
+17:53:09 Build Finished (took 10s.659ms)
+

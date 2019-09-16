@@ -1,0 +1,240 @@
+
+
+================================================================
+== Vivado HLS Report for 'sobel_filter'
+================================================================
+* Date:           Fri Jul 19 22:30:19 2019
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        sobel_hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    10.283|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         4|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 2
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 4 5 6 7 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	8  / (!tmp)
+	5  / (tmp)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	4  / true
+8 --> 
+	9  / true
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 10 [2/2] (1.00ns)   --->   "%cols_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %cols)"   --->   Operation 10 'read' 'cols_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 11 [2/2] (1.00ns)   --->   "%rows_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %rows)"   --->   Operation 11 'read' 'rows_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 2 <SV = 1> <Delay = 1.00>
+ST_2 : Operation 12 [1/2] (1.00ns)   --->   "%cols_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %cols)"   --->   Operation 12 'read' 'cols_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 13 [1/2] (1.00ns)   --->   "%rows_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %rows)"   --->   Operation 13 'read' 'rows_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 3 <SV = 2> <Delay = 8.51>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %inter_pix_V_V), !map !51"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out_pix_V_V), !map !55"   --->   Operation 15 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %rows), !map !59"   --->   Operation 16 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %cols), !map !65"   --->   Operation 17 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @sobel_filter_str) nounwind"   --->   Operation 18 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %out_pix_V_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:22]   --->   Operation 19 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %inter_pix_V_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:23]   --->   Operation 20 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:24]   --->   Operation 21 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %rows, [10 x i8]* @p_str3, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:25]   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %cols, [10 x i8]* @p_str3, i32 1, i32 1, [1 x i8]* @p_str2, i32 0, i32 0, [9 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:26]   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (8.51ns)   --->   "%PIXNUM = mul nsw i32 %cols_read, %rows_read" [sobel_hls/sobel.cpp:28]   --->   Operation 24 'mul' 'PIXNUM' <Predicate = true> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (1.76ns)   --->   "br label %1" [sobel_hls/sobel.cpp:30]   --->   Operation 25 'br' <Predicate = true> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 3.45>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%x = phi i31 [ 0, %0 ], [ %x_1, %2 ]" [sobel_hls/sobel.cpp:30]   --->   Operation 26 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%x_cast = zext i31 %x to i32" [sobel_hls/sobel.cpp:30]   --->   Operation 27 'zext' 'x_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (2.47ns)   --->   "%tmp = icmp slt i32 %x_cast, %PIXNUM" [sobel_hls/sobel.cpp:30]   --->   Operation 28 'icmp' 'tmp' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 29 [1/1] (2.52ns)   --->   "%x_1 = add i31 %x, 1" [sobel_hls/sobel.cpp:30]   --->   Operation 29 'add' 'x_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %tmp, label %2, label %3" [sobel_hls/sobel.cpp:30]   --->   Operation 30 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [2/2] (0.00ns)   --->   "%tmp_V_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32* %inter_pix_V_V)" [sobel_hls/sobel.cpp:37]   --->   Operation 31 'read' 'tmp_V_1' <Predicate = (tmp)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 5 <SV = 4> <Delay = 10.2>
+ST_5 : Operation 32 [1/2] (0.00ns)   --->   "%tmp_V_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32* %inter_pix_V_V)" [sobel_hls/sobel.cpp:37]   --->   Operation 32 'read' 'tmp_V_1' <Predicate = (tmp)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 33 [1/1] (0.00ns)   --->   "%new_pix_2 = trunc i32 %tmp_V_1 to i8" [sobel_hls/sobel.cpp:38]   --->   Operation 33 'trunc' 'new_pix_2' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "%new_pix_1 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_V_1, i32 8, i32 15)" [sobel_hls/sobel.cpp:39]   --->   Operation 34 'partselect' 'new_pix_1' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_V_1, i32 16, i32 23)" [sobel_hls/sobel.cpp:37]   --->   Operation 35 'partselect' 'tmp_2' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%p_shl3_i = call i14 @_ssdm_op_BitConcatenate.i14.i8.i6(i8 %tmp_2, i6 0)" [sobel_hls/sobel.cpp:9->sobel_hls/sobel.cpp:41]   --->   Operation 36 'bitconcatenate' 'p_shl3_i' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 37 [1/1] (0.00ns)   --->   "%p_shl3_i_cast = zext i14 %p_shl3_i to i15" [sobel_hls/sobel.cpp:9->sobel_hls/sobel.cpp:41]   --->   Operation 37 'zext' 'p_shl3_i_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "%p_shl4_i = call i9 @_ssdm_op_BitConcatenate.i9.i8.i1(i8 %tmp_2, i1 false)" [sobel_hls/sobel.cpp:9->sobel_hls/sobel.cpp:41]   --->   Operation 38 'bitconcatenate' 'p_shl4_i' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "%p_shl4_i_cast = zext i9 %p_shl4_i to i15" [sobel_hls/sobel.cpp:9->sobel_hls/sobel.cpp:41]   --->   Operation 39 'zext' 'p_shl4_i_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_9_i = zext i8 %new_pix_1 to i16" [sobel_hls/sobel.cpp:10->sobel_hls/sobel.cpp:41]   --->   Operation 40 'zext' 'tmp_9_i' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "%p_shl_i = call i15 @_ssdm_op_BitConcatenate.i15.i8.i7(i8 %new_pix_1, i7 0)" [sobel_hls/sobel.cpp:10->sobel_hls/sobel.cpp:41]   --->   Operation 41 'bitconcatenate' 'p_shl_i' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "%p_shl_i_cast = zext i15 %p_shl_i to i16" [sobel_hls/sobel.cpp:10->sobel_hls/sobel.cpp:41]   --->   Operation 42 'zext' 'p_shl_i_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_i_cast = zext i8 %new_pix_2 to i13" [sobel_hls/sobel.cpp:11->sobel_hls/sobel.cpp:41]   --->   Operation 43 'zext' 'tmp_i_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (3.36ns)   --->   "%tmp_mul2 = mul i13 25, %tmp_i_cast" [sobel_hls/sobel.cpp:11->sobel_hls/sobel.cpp:41]   --->   Operation 44 'mul' 'tmp_mul2' <Predicate = (tmp)> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 45 [1/1] (1.81ns)   --->   "%tmp1 = add i15 %p_shl3_i_cast, %p_shl4_i_cast" [sobel_hls/sobel.cpp:12->sobel_hls/sobel.cpp:41]   --->   Operation 45 'add' 'tmp1' <Predicate = (tmp)> <Delay = 1.81> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%tmp1_cast = zext i15 %tmp1 to i16" [sobel_hls/sobel.cpp:12->sobel_hls/sobel.cpp:41]   --->   Operation 46 'zext' 'tmp1_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (1.94ns)   --->   "%tmp2 = add i16 %p_shl_i_cast, %tmp_9_i" [sobel_hls/sobel.cpp:12->sobel_hls/sobel.cpp:41]   --->   Operation 47 'add' 'tmp2' <Predicate = (tmp)> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 48 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_add0 = add i16 %tmp2, %tmp1_cast" [sobel_hls/sobel.cpp:12->sobel_hls/sobel.cpp:41]   --->   Operation 48 'add' 'tmp_add0' <Predicate = (tmp)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 49 [1/1] (3.02ns)   --->   "%tmp_add1 = add i13 128, %tmp_mul2" [sobel_hls/sobel.cpp:13->sobel_hls/sobel.cpp:41]   --->   Operation 49 'add' 'tmp_add1' <Predicate = (tmp)> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_add1_cast = zext i13 %tmp_add1 to i16" [sobel_hls/sobel.cpp:13->sobel_hls/sobel.cpp:41]   --->   Operation 50 'zext' 'tmp_add1_cast' <Predicate = (tmp)> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (3.90ns) (root node of TernaryAdder)   --->   "%tmp_3_i = add i16 %tmp_add0, %tmp_add1_cast" [sobel_hls/sobel.cpp:14->sobel_hls/sobel.cpp:41]   --->   Operation 51 'add' 'tmp_3_i' <Predicate = (tmp)> <Delay = 3.90> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.95> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_5_i = call i8 @_ssdm_op_PartSelect.i8.i16.i32.i32(i16 %tmp_3_i, i32 8, i32 15)" [sobel_hls/sobel.cpp:17->sobel_hls/sobel.cpp:41]   --->   Operation 52 'partselect' 'tmp_5_i' <Predicate = (tmp)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 1.91>
+ST_6 : Operation 53 [1/1] (1.91ns)   --->   "%gray = add i8 16, %tmp_5_i" [sobel_hls/sobel.cpp:17->sobel_hls/sobel.cpp:41]   --->   Operation 53 'add' 'gray' <Predicate = (tmp)> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "%p_Result_s = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 -1, i8 %gray, i8 %gray, i8 %gray)" [sobel_hls/sobel.cpp:47]   --->   Operation 54 'bitconcatenate' 'p_Result_s' <Predicate = (tmp)> <Delay = 0.00>
+ST_6 : Operation 55 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i32P(i32* %out_pix_V_V, i32 %p_Result_s)" [sobel_hls/sobel.cpp:48]   --->   Operation 55 'write' <Predicate = (tmp)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str5)" [sobel_hls/sobel.cpp:30]   --->   Operation 56 'specregionbegin' 'tmp_1' <Predicate = (tmp)> <Delay = 0.00>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [sobel_hls/sobel.cpp:31]   --->   Operation 57 'specpipeline' <Predicate = (tmp)> <Delay = 0.00>
+ST_7 : Operation 58 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i32P(i32* %out_pix_V_V, i32 %p_Result_s)" [sobel_hls/sobel.cpp:48]   --->   Operation 58 'write' <Predicate = (tmp)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str5, i32 %tmp_1)" [sobel_hls/sobel.cpp:50]   --->   Operation 59 'specregionend' 'empty' <Predicate = (tmp)> <Delay = 0.00>
+ST_7 : Operation 60 [1/1] (0.00ns)   --->   "br label %1" [sobel_hls/sobel.cpp:30]   --->   Operation 60 'br' <Predicate = (tmp)> <Delay = 0.00>
+
+State 8 <SV = 4> <Delay = 0.00>
+ST_8 : Operation 61 [2/2] (0.00ns)   --->   "ret void" [sobel_hls/sobel.cpp:51]   --->   Operation 61 'ret' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 5> <Delay = 0.00>
+ST_9 : Operation 62 [1/2] (0.00ns)   --->   "ret void" [sobel_hls/sobel.cpp:51]   --->   Operation 62 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'cols' [10]  (1 ns)
+
+ <State 2>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'cols' [10]  (1 ns)
+
+ <State 3>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('PIXNUM', sobel_hls/sobel.cpp:28) [17]  (8.51 ns)
+
+ <State 4>: 3.45ns
+The critical path consists of the following:
+	'icmp' operation ('tmp', sobel_hls/sobel.cpp:30) [22]  (2.47 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 5>: 10.3ns
+The critical path consists of the following:
+	axis read on port 'inter_pix_V_V' (sobel_hls/sobel.cpp:37) [28]  (0 ns)
+	'mul' operation ('tmp_mul2', sobel_hls/sobel.cpp:11->sobel_hls/sobel.cpp:41) [40]  (3.36 ns)
+	'add' operation ('tmp_add1', sobel_hls/sobel.cpp:13->sobel_hls/sobel.cpp:41) [45]  (3.02 ns)
+	'add' operation ('tmp_3_i', sobel_hls/sobel.cpp:14->sobel_hls/sobel.cpp:41) [47]  (3.9 ns)
+
+ <State 6>: 1.92ns
+The critical path consists of the following:
+	'add' operation ('gray', sobel_hls/sobel.cpp:17->sobel_hls/sobel.cpp:41) [49]  (1.92 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

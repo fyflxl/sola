@@ -1,0 +1,172 @@
+23:16:37 **** Incremental Build of configuration Release for project isa_axilite_timeout ****
+make all 
+make: Nothing to be done for `all'.
+23:17:22 **** Auto Build of configuration Release for project isa_axililte_int_rw ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main(int, char**)':
+../src/main.cpp:71:6: warning: unused variable 'wdata_array0' [-Wunused-variable]
+  int wdata_array0[32] = {
+      ^~~~~~~~~~~~
+../src/main.cpp:78:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+../src/main.cpp:79:6: warning: unused variable 'rdata' [-Wunused-variable]
+  int rdata;
+      ^~~~~
+../src/main.cpp:80:9: warning: unused variable 'wdata' [-Wunused-variable]
+     int wdata;
+         ^~~~~
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axililte_int_rw.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axililte_int_rw.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axililte_int_rw.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axililte_int_rw.elf  |tee "isa_axililte_int_rw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418768	   8724	   2784	 430276	  690c4	isa_axililte_int_rw.elf
+'Finished building: isa_axililte_int_rw.elf.size'
+' '
+23:17:39 **** Auto Build of configuration Release for project isa_axilite_timeout ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_timeout.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_timeout.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_timeout.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_timeout.elf  |tee "isa_axilite_timeout.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417772	   8724	   2784	 429280	  68ce0	isa_axilite_timeout.elf
+'Finished building: isa_axilite_timeout.elf.size'
+' '
+23:17:50 **** Auto Build of configuration Release for project isa_axililte_int_rw ****
+make all 
+'Building file: ../src/isa_hw.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/isa_hw.o" -MMD -MP -MF"src/isa_hw.d" -MT"src/isa_hw.o" -o "src/isa_hw.o" "../src/isa_hw.cpp"
+'Finished building: ../src/isa_hw.cpp'
+' '
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main(int, char**)':
+../src/main.cpp:71:6: warning: unused variable 'wdata_array0' [-Wunused-variable]
+  int wdata_array0[32] = {
+      ^~~~~~~~~~~~
+../src/main.cpp:78:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+../src/main.cpp:79:6: warning: unused variable 'rdata' [-Wunused-variable]
+  int rdata;
+      ^~~~~
+../src/main.cpp:80:9: warning: unused variable 'wdata' [-Wunused-variable]
+     int wdata;
+         ^~~~~
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axililte_int_rw.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axililte_int_rw.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axililte_int_rw.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axililte_int_rw.elf  |tee "isa_axililte_int_rw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418768	   8724	   2784	 430276	  690c4	isa_axililte_int_rw.elf
+'Finished building: isa_axililte_int_rw.elf.size'
+' '
+23:18:03 **** Auto Build of configuration Release for project isa_axilite_timeout ****
+make all 
+'Building file: ../src/isa_hw.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/isa_hw.o" -MMD -MP -MF"src/isa_hw.d" -MT"src/isa_hw.o" -o "src/isa_hw.o" "../src/isa_hw.cpp"
+'Finished building: ../src/isa_hw.cpp'
+' '
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_timeout.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_timeout.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_timeout.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_timeout.elf  |tee "isa_axilite_timeout.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417772	   8724	   2784	 429280	  68ce0	isa_axilite_timeout.elf
+'Finished building: isa_axilite_timeout.elf.size'
+' '
+23:18:36 **** Auto Build of configuration Release for project isa_axilite_timeout ****
+make all 
+'Building file: ../src/isa_hw.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/isa_hw.o" -MMD -MP -MF"src/isa_hw.d" -MT"src/isa_hw.o" -o "src/isa_hw.o" "../src/isa_hw.cpp"
+'Finished building: ../src/isa_hw.cpp'
+' '
+'Building target: isa_axilite_timeout.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_timeout.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_timeout.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_timeout.elf  |tee "isa_axilite_timeout.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418044	   8724	   2784	 429552	  68df0	isa_axilite_timeout.elf
+'Finished building: isa_axilite_timeout.elf.size'
+' '
+23:18:51 **** Auto Build of configuration Release for project isa_axilite_timeout ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_timeout.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_timeout.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_timeout.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_timeout.elf  |tee "isa_axilite_timeout.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418044	   8724	   2784	 429552	  68df0	isa_axilite_timeout.elf
+'Finished building: isa_axilite_timeout.elf.size'
+' '
+23:19:31 **** Auto Build of configuration Release for project isa_axilite_timeout ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main(int, char**)':
+../src/main.cpp:14:6: warning: variable 'rdata' set but not used [-Wunused-but-set-variable]
+  int rdata = 0x00;
+      ^~~~~
+../src/main.cpp:34:9: warning: unused variable 'error' [-Wunused-variable]
+     int error = 0;
+         ^~~~~
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_timeout.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_timeout.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_timeout.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_timeout.elf  |tee "isa_axilite_timeout.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418028	   8724	   2784	 429536	  68de0	isa_axilite_timeout.elf
+'Finished building: isa_axilite_timeout.elf.size'
+' '

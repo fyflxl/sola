@@ -1,0 +1,11 @@
+verilog xil_defaultlib --include "../../../../axilite_test.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../axilite_test.srcs/sources_1/bd/design_1/ipshared/5bb9/hdl/verilog" --include "../../../../axilite_test.srcs/sources_1/bd/design_1/ipshared/70fd/hdl" \
+"../../../bd/design_1/ipshared/f7c3/hdl/axilite_test_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/f7c3/hdl/axilite_test_v1_0.v" \
+"../../../bd/design_1/ip/design_1_axilite_test_0_0/sim/design_1_axilite_test_0_0.v" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_2/sim/design_1_processing_system7_0_2.v" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

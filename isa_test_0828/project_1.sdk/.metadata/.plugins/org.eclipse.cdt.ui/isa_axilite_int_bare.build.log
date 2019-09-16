@@ -1,0 +1,8 @@
+10:31:48 **** Incremental Build of configuration Debug for project isa_axilite_int_bare ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+
+10:31:49 Build Finished (took 629ms)
+

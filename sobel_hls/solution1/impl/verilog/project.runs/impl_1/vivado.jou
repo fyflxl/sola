@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Jul 19 22:38:00 2019
+# Process ID: 35248
+# Current directory: K:/sola/sobel_hls/solution1/impl/verilog/project.runs/impl_1
+# Command line: vivado.exe -log sobel_filter.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source sobel_filter.tcl -notrace
+# Log file: K:/sola/sobel_hls/solution1/impl/verilog/project.runs/impl_1/sobel_filter.vdi
+# Journal file: K:/sola/sobel_hls/solution1/impl/verilog/project.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source sobel_filter.tcl -notrace

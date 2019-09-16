@@ -1,0 +1,21 @@
+20:47:48 **** Auto Build of configuration Release for project isa_axililte_int_rw ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axililte_int_rw.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axililte_int_rw.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axililte_int_rw.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axililte_int_rw.elf  |tee "isa_axililte_int_rw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417772	   8724	   2784	 429280	  68ce0	isa_axililte_int_rw.elf
+'Finished building: isa_axililte_int_rw.elf.size'
+' '
+
+20:47:52 Build Finished (took 4s.654ms)
+

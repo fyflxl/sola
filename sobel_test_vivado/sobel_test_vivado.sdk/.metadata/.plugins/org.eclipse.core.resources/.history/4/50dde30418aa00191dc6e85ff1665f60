@@ -1,0 +1,123 @@
+/*********************************** Header Section *****************************************
+--
+-- NAME       : Yu Jin
+-- Date       : Aug, 2014
+-- E-mail     : yj3119@sina.com
+-- Address    : Department of Electrical Engineering, Jiangnan University
+
+-- Filename   : sobel.c
+-- Description: Sobel IP Control Bus Driver API
+--
+*********************************** End Header Section***************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <linux/fb.h>
+#include <string.h>
+#include <time.h>
+
+#include "sobel.h"
+#include "base.h"
+
+//Hardware SOBEL Hardware Driver without linux API
+void XSOBEL_hw_Ex(int byte_framein_offset, int ncols, int nrows, int outer_iter, int byte_rdoffset, int byte_wroffset)
+{
+	//Set Control Registers State Or Value
+	XSOBEL_Init_Ex(XSOBEL_ENGINE_PHY_BASEADDR, ncols, nrows, 0, byte_rdoffset, byte_wroffset, byte_framein_offset);
+
+	//Start The FPGA IP Core
+	XSOBEL_StartStop_Ex(XSOBEL_ENGINE_PHY_BASEADDR, 1);
+         
+		 
+    sleep(1);
+
+	//Stop The FPGA IP Core check Whether The IP Core is End
+	XSOBEL_StartStop_Ex(XSOBEL_ENGINE_PHY_BASEADDR, 0);
+
+}
+
+void XSOBEL_Init_Ex(unsigned long xsobel_physical_base, int ncols, int nrows, int outer_iter_num, int byte_rdoffset,
+	                int byte_wroffset, int byte_framein_offset)
+{
+	unsigned long int PhysicalAddress = xsobel_physical_base;
+	int map_len = 0x60;
+	int fd = open("/dev/mem", O_RDWR);
+
+	unsigned char *xsobel_base_address;
+	xsobel_base_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+	if(xsobel_base_address == MAP_FAILED)
+	{
+		perror("Sobel Init Mapping memory for absolute memory access failed.\n");
+		return;
+	}
+
+	REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ROWS_DATA, nrows);
+	REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_COLS_DATA , ncols);
+	//REG_WRITE(xsobel_base_address, XSOBEL_AXI4_LITE_SLAVE_ADDR_OUTER_ITER_NUM_DATA, outer_iter_num);
+	REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_RDOFFSET_DATA, byte_rdoffset);
+	REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_WROFFSET_DATA, byte_wroffset);
+	//REG_WRITE(xsobel_base_address, XSOBEL_AXI4_LITE_SLAVE_ADDR_BYTE_FRAMEIN_OFFSET_DATA, byte_framein_offset);
+        
+        printf("nrows %d\n", REG_READ(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ROWS_DATA));
+        printf("ncols %d\n", REG_READ(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_COLS_DATA));
+        printf("rd %x\n", REG_READ(xsobel_base_address,XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_RDOFFSET_DATA));
+        printf("wd %x\n", REG_READ(xsobel_base_address,XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_BYTE_WROFFSET_DATA));
+ 
+	munmap((void *)xsobel_base_address, map_len);
+	close(fd);
+}
+
+//Start Or Stop the FPGA IP Core
+void XSOBEL_StartStop_Ex(unsigned long xsobel_physical_base, int state)
+{
+	unsigned long int PhysicalAddress = xsobel_physical_base;
+	int map_len = 0x60;
+	unsigned int ap_done;
+	int fd = open( "/dev/mem", O_RDWR);
+	unsigned char *xsobel_base_address;
+	//unsigned int ap_start;
+
+	xsobel_base_address = (unsigned char*)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+	//check if it worked
+	if(xsobel_base_address == MAP_FAILED)
+	{
+		perror("Sobel Start Mapping memory for absolute memory access failed.\n");
+		return;
+	}
+
+	if(state)
+	{
+		//reset the filter
+		//ap_start = REG_READ(xrbsor_base_address, XOPTICALFLOW_AXI4_LITE_SLAVE_ADDR_AP_CTRL);
+
+		//enable the interrupt
+		//enable the interrupt global
+		REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_GIE , 1);
+		REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ISR, 1);
+
+		//Start the filter
+		REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_AP_CTRL, 0x1);
+	}
+	else
+	{
+		while(1)
+		{
+			ap_done = ((REG_READ(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_AP_CTRL) >> 1) && 0x1);
+			if(ap_done)
+			{
+				 break;
+			}
+		}
+		REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_GIE, 0x0);
+		REG_WRITE(xsobel_base_address, XSOBEL_FILTER_AXI4_LITE_SLAVE_ADDR_ISR, 0x0);
+
+	}
+	munmap((void *)xsobel_base_address, map_len);
+	close(fd);
+
+}
+
+	               

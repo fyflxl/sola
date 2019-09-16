@@ -1,0 +1,6 @@
+   Build using "L:/Xilinx_201802/Vivado/2018.2/msys64/mingw64/bin/g++"
+   Compiling sobel_test.cpp_pre.cpp.tb.cpp
+   Compiling ap_bmp.cpp_pre.cpp.tb.cpp
+   Compiling sobel.cpp_pre.cpp.tb.cpp
+   Compiling apatb_sobel_filter.cpp
+   Generating cosim.tv.exe

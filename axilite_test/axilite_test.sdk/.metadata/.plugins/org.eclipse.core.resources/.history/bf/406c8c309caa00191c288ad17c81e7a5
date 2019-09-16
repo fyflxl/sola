@@ -1,0 +1,14 @@
+/*
+ * Empty C++ Application
+ */
+#include "axilite_hw.h"
+
+int main()
+{
+	int x;
+	for(x=0; x<16; x++)
+	{
+		AXILITE_HW(x);
+	}
+	return 0;
+}

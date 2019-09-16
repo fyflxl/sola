@@ -1,0 +1,27 @@
+/*
+ * Empty C++ Application
+ */
+
+#include "isa_hw.h"
+
+int main( int argc, char *argv[])
+{
+	int rdata;
+    int wdata;
+    if(argc==1)
+    {
+    	wdata = 0xABCD;
+    	printf("Default wdata: 0x%x\n", wdata);
+    }
+    else
+    {
+    	wdata = atoi(argv[1]);
+        puts(argv[1]);
+    }
+    printf("WDATA = 0x%x\n", wdata);
+    ISA_FPGA(0x01, 0xEAC8, wdata);
+    rdata = ISA_FPGA(0x02, 0xEAC8, wdata);
+    printf("RDATA = 0x%x\n", rdata);
+
+    return 0;
+}

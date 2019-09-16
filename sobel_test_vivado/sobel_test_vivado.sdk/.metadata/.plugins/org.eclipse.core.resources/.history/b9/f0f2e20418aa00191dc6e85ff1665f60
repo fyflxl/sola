@@ -1,0 +1,91 @@
+/*********************************** Header Section *****************************************
+--
+-- NAME       : Yu Jin
+-- Date       : Aug, 2014
+-- E-mail     : yj3119@sina.com
+-- Address    : Department of Electrical Engineering, Jiangnan University
+
+-- Filename   : SobelHW.c
+-- Description: Sobel IP API
+--
+*********************************** End Header Section***************************************/    
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "unistd.h"
+
+#include "base.h"
+#include "sobel.h"
+#include "util.h"
+#include "ap_bmp.h"
+
+//Basic color definitions
+//#define BLACK 0
+//#define WHITE 255
+
+//Maximum image size
+//#define MAX_ROWS 1080
+//#define MAX_COLS 1920
+
+int main(int argv, char **argc)
+{
+	clock_t start1, end1;
+	start1 = clock();
+
+	if(argv < 3)
+	{
+		printf("Usage: Sobel.bin <input_frame> <output_frame>");
+		return (1);
+	}
+
+	char *input_frame;
+	char *output_frame;
+
+	input_frame = argc[1];
+	output_frame = argc[2];
+
+	unsigned char *R, *G, *B;
+    R = (unsigned char *)malloc(MAX_ROWS * MAX_COLS * sizeof(unsigned char));
+    G = (unsigned char *)malloc(MAX_ROWS * MAX_COLS * sizeof(unsigned char));
+    B = (unsigned char *)malloc(MAX_ROWS * MAX_COLS * sizeof(unsigned char));
+
+    int read_tmp = BMP_Read(input_frame, MAX_ROWS, MAX_COLS, R, G, B);
+    if(read_tmp != 0)
+    {
+    	printf("%s Loading image failed!\n", input_frame);
+    	exit(1);
+    }
+
+    int BUFFER_OFFSETS = MAX_ROWS * MAX_COLS * 4;
+    clearMemory(0x10000000, BUFFER_OFFSETS);
+    clearMemory(0x12000000, BUFFER_OFFSETS);
+
+    //Write Image to AXI Data Stream
+    copy_mem2dev(R, G, B, MAX_COLS, MAX_ROWS, 0x10000000);
+
+    //Xsobel Hardware and Software Co-Processing
+    //clock_t start3, end3;
+
+    XSOBEL_hw_Ex(0, MAX_COLS, MAX_ROWS, 0, 0x10000000, 0x12000000);
+
+    
+    //Read Output Data From AXI Data Stream
+
+    copy_dev2mem(R, G, B, MAX_COLS, MAX_ROWS, 0x12000000);
+
+
+    int write_tmp = BMP_Write(output_frame, MAX_ROWS, MAX_COLS, R, G, B);
+
+    if(write_tmp != 0)
+    {
+    	printf("Write BMP %s failed!\n", output_frame);
+    	exit(1);
+    }
+
+    free(R);
+    free(G);
+    free(B);
+
+    return 0;
+}
+

@@ -1,0 +1,21 @@
+21:58:47 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424416	   8724	   2784	 435924	  6a6d4	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+
+21:59:15 Build Finished (took 27s.931ms)
+

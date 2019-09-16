@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../isa_controller_0828_timeout.srcs/sources_1/imports/src/ISA_Controller.v" \
+"../../../../isa_controller_0828_timeout.srcs/sources_1/imports/src/axi_isa.v" \
+"../../../../isa_controller_0828_timeout.srcs/sources_1/imports/src/axi_isa_S00_AXI.v" \
+"../../../../isa_controller_0828_timeout.srcs/sources_1/new/cross_clock_domain_resetn.v" \
+"../../../../isa_controller_0828_timeout.srcs/sim_1/imports/src/axi_isa_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Sep 12 16:40:50 2019
+# Process ID: 7652
+# Current directory: D:/sola/sola/isa_test_0828
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent668 D:\sola\sola\isa_test_0828\project_1.xpr
+# Log file: D:/sola/sola/isa_test_0828/vivado.log
+# Journal file: D:/sola/sola/isa_test_0828\vivado.jou
+#-----------------------------------------------------------
+start_gui
+opeopen_project D:/sola/sola/isa_test_0828/project_1.xupdate_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1

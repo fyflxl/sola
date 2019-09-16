@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="sobel.h" path="K:\sola\sobel_hls\sobel.h"/>
+    <originFiles name="sobel.cpp" path="K:\sola\sobel_hls\sobel.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test_1080p.bmp" path="K:\sola\sobel_hls\test_1080p.bmp"/>
+    <originFiles name="sobel_test.cpp" path="K:\sola\sobel_hls\sobel_test.cpp"/>
+    <originFiles name="result_1080p_golden.bmp" path="K:\sola\sobel_hls\result_1080p_golden.bmp"/>
+    <originFiles name="ap_bmp.cpp" path="K:\sola\sobel_hls\ap_bmp.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

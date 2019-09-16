@@ -1,0 +1,94 @@
+
+#include "isa_hw.h"
+
+double what_time_is_it_now()
+{
+    struct timeval time;
+    if (gettimeofday(&time,NULL)){
+        return 0;
+    }
+    return (double)time.tv_sec + (double)time.tv_usec * .000001;
+}
+
+int YOLO2_FPGA(int In_Address,int Out_Address,int Weight_offset,int Beta_offset,const int InFM_num,const int OutFM_num,
+							  const int Kernel_size,const int Kernel_stride,
+							  const int Input_w,const int Input_h,const int Output_w,const int Output_h,
+							  const int Padding,const bool IsNL,const bool IsBN,
+							  const int TM,const int TN,const int TR,const int TC,
+							  const int mLoops,const int nLoops,const int rLoops,const int cLoops,const int LayerType,
+							  int InputQ,int OutputQ,int WeightQ,int BetaQ,unsigned int WEIGHT_BASE,unsigned int BETA_BASE)
+{
+	unsigned int ap_idle;
+	unsigned int ap_done;
+
+	unsigned long int PhysicalAddress = YOLO2_BASEADDR;
+	int map_len = 0xf8;
+	int fd = open("/dev/mem", O_RDWR);
+
+	unsigned char *xbase_address;
+	xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+	if(xbase_address == MAP_FAILED)
+	{
+		perror("1:Init Mapping memory for absolute memory access failed.\n");
+		return -1;
+	}
+
+	while(1)
+	{
+		ap_idle = ((ReadReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_AP_CTRL) >> 2) && 0x1);
+		if(ap_idle)
+			break;
+	}
+
+//#define WEIGHT_BASE (0x10000000)
+//#define BETA_BASE (0x1C25F000)
+
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_R_DATA,  In_Address);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_R_DATA, Out_Address);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_WEIGHT_DATA,   WEIGHT_BASE + Weight_offset*4);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_BETA_DATA,     BETA_BASE + Beta_offset*4);
+
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_INFM_NUM_DATA, InFM_num);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_OUTFM_NUM_DATA, OutFM_num);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_KERNEL_SIZE_DATA, Kernel_size);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_KERNEL_STRIDE_DATA, Kernel_stride);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_W_DATA, Input_w);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_H_DATA, Input_h);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_W_DATA, Output_w);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_H_DATA, Output_h);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_PADDING_DATA, Padding);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_ISNL_DATA, IsNL);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_ISBN_DATA, IsBN);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_TM_DATA, TM);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_TN_DATA, TN);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_TR_DATA, TR);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_TC_DATA, TC);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_MLOOPS_DATA, mLoops);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_NLOOPS_DATA, nLoops);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_RLOOPS_DATA, rLoops);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_CLOOPS_DATA, cLoops);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_LAYERTYPE_DATA, LayerType);
+
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_INPUTQ_DATA, InputQ);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUTQ_DATA, OutputQ);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_WEIGHTQ_DATA, WeightQ);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_BETAQ_DATA, BetaQ);
+//	double time1,time2;
+//	time1 = what_time_is_it_now();
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_GIE, 0x0);
+	WriteReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_AP_CTRL, 0x1);//Start
+	while(1)
+	{
+		ap_done = ((ReadReg(xbase_address, XYOLO2_FPGA_CTRL_BUS_ADDR_AP_CTRL) >> 1) && 0x1);
+		if(ap_done)
+			break;
+	}
+//	time2 = what_time_is_it_now();
+//	printf("START TO DONE in %f seconds.\n",time2 - time1);
+
+	munmap((void *)xbase_address, map_len);
+	close(fd);
+
+	return 0;
+
+}

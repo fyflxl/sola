@@ -1,0 +1,67 @@
+
+#include "axilite_hw.h"
+
+//void PR_Decoupler(int turn)
+//{
+//	unsigned long int PhysicalAddress = 0x43c00000;
+//	int map_len = 0x60;
+//	int fd = open("/dev/mem", O_RDWR);
+//
+//	unsigned char *xsobel_base_address;
+//	xsobel_base_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+//	if(xsobel_base_address == MAP_FAILED)
+//	{
+//		perror("Sobel Init Mapping memory for absolute memory access failed.\n");
+//		return;
+//	}
+//
+//    printf("status: %x\n", ReadReg(xsobel_base_address, 0));
+//    printf("turn %d\n", turn);
+//
+//	WriteReg(xsobel_base_address, 0, turn);
+//
+//
+//    printf("status %d\n", ReadReg(xsobel_base_address, 0));
+//
+//	munmap((void *)xsobel_base_address, map_len);
+//	close(fd);
+//}
+
+void AXILITE_HW()
+{
+//	PR_Decoupler(0);
+//	sleep(1);
+	unsigned long int PhysicalAddress = AXILITE_BASEADDR;
+	int map_len = 0x20;
+	int fd = open("/dev/mem", O_RDWR);
+
+	unsigned char *xsobel_base_address;
+	xsobel_base_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+	if(xsobel_base_address == MAP_FAILED)
+	{
+		perror("Sobel Init Mapping memory for absolute memory access failed.\n");
+		return;
+	}
+
+
+    printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+
+    printf("rows %d\n", nrows);
+	printf("cols %d\n", ncols);
+
+	WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+	WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+
+	WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+	WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+
+    printf("rows %d\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA));
+	printf("cols %d\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA));
+
+	WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+
+	printf("AP_CTRL %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL));
+
+	munmap((void *)xsobel_base_address, map_len);
+	close(fd);
+}

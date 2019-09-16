@@ -1,0 +1,38 @@
+/*
+ * Empty C++ Application
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <math.h>
+#include <fcntl.h>
+#include <string.h>
+#include <time.h>
+#include "isa_hw.h"
+
+int main( int argc, char *argv[])
+{
+	unsigned int wdata = 0;
+	char buff[256];
+    char *input_imgfn = buff;
+    if(argc==1)
+    {
+    	wdata = 0xABCD;
+    }
+    else
+    {
+    	wdata = atoi(argv[1]);
+    }
+    printf("WDATA = 0x%x\n", wdata);
+	double time;
+    time = what_time_is_it_now();
+	yolov2_hls_ps(net, X,WEIGHT_BASE,BETA_BASE,MEM_BASE);
+	printf("Predicted in %f seconds.\n",what_time_is_it_now()-time);
+
+
+
+	printf("YOLOv2 TEST End\n");
+
+    return 0;
+}

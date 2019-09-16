@@ -1,0 +1,26 @@
+/*********************************** Header Section *****************************************
+--
+-- NAME       : Yu Jin
+-- Date       : Aug, 2014
+-- E-mail     : yj3119@sina.com
+-- Address    : Department of Electrical Engineering, Jiangnan University
+
+-- Filename   : sobel.h
+-- Description: Sobel IP API
+--
+*********************************** End Header Section***************************************/
+#ifndef SOBEL_H
+#define SOBEL_H
+
+//Hardware SOBEL Hardware Driver without linux API
+void XSOBEL_hw_Ex(int byte_framein_offset, int ncols, int nrows, int outer_iter, int byte_rdoffset, int byte_wroffset);
+
+//Set SOBEL Register Operations
+void XSOBEL_Init_Ex(unsigned long xsobel_physical_base, int ncols, int nrows, int outer_iter_num, int byte_rdoffset,
+	                int byre_wroffset, int byte_framein_offset);
+
+//Start Or Stop the FPGA IP Core
+void XSOBEL_StartStop_Ex(unsigned long xsobel_physical_base, int state);
+
+
+#endif //SOBEL_H    

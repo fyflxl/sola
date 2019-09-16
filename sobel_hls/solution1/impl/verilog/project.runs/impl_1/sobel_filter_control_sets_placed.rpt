@@ -1,0 +1,79 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Fri Jul 19 22:38:44 2019
+| Host         : BF-20160906TGWX running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file sobel_filter_control_sets_placed.rpt
+| Design       : sobel_filter
+| Device       : xc7z010
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    14 |
+| Unused register locations in slices containing registers |    22 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|     10 |            2 |
+|    16+ |           12 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              16 |            4 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              56 |           15 |
+| Yes          | No                    | No                     |             242 |           41 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             200 |           20 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------------------+------------------------------------------------+------------------+----------------+
+| Clock Signal |                    Enable Signal                   |                Set/Reset Signal                | Slice Load Count | Bel Load Count |
++--------------+----------------------------------------------------+------------------------------------------------+------------------+----------------+
+|  ap_clk      | sobel_filter_CTRL_BUS_s_axi_U/ar_hs                | sobel_filter_CTRL_BUS_s_axi_U/rdata[7]_i_1_n_0 |                2 |             10 |
+|  ap_clk      | sobel_filter_CTRL_BUS_s_axi_U/waddr                |                                                |                1 |             10 |
+|  ap_clk      |                                                    |                                                |                4 |             16 |
+|  ap_clk      | out_pix_V_V_1_load_A                               |                                                |                3 |             16 |
+|  ap_clk      | tmp_5_i_reg_2970                                   |                                                |                2 |             16 |
+|  ap_clk      | out_pix_V_V_1_load_B                               |                                                |                2 |             16 |
+|  ap_clk      | ap_CS_fsm_state3                                   |                                                |                6 |             34 |
+|  ap_clk      | inter_pix_V_V_0_load_A                             |                                                |               12 |             48 |
+|  ap_clk      | inter_pix_V_V_0_load_B                             |                                                |                7 |             48 |
+|  ap_clk      | sobel_filter_CTRL_BUS_s_axi_U/ar_hs                |                                                |                8 |             54 |
+|  ap_clk      |                                                    | sobel_filter_CTRL_BUS_s_axi_U/ap_rst_n_inv     |               15 |             56 |
+|  ap_clk      | x_reg_1070                                         | x_reg_107                                      |                8 |             62 |
+|  ap_clk      | sobel_filter_CTRL_BUS_s_axi_U/int_cols[31]_i_1_n_0 | sobel_filter_CTRL_BUS_s_axi_U/ap_rst_n_inv     |                4 |             64 |
+|  ap_clk      | sobel_filter_CTRL_BUS_s_axi_U/int_rows[31]_i_1_n_0 | sobel_filter_CTRL_BUS_s_axi_U/ap_rst_n_inv     |                6 |             64 |
++--------------+----------------------------------------------------+------------------------------------------------+------------------+----------------+
+
+

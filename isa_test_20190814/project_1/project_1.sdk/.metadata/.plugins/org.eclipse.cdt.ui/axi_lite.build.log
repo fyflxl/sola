@@ -1,0 +1,21 @@
+14:12:13 **** Auto Build of configuration Release for project axi_lite ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+'Finished building: ../src/main.cpp'
+' '
+'Building target: axi_lite.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axi_lite.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: axi_lite.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axi_lite.elf  |tee "axi_lite.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418496	   8724	   2784	 430004	  68fb4	axi_lite.elf
+'Finished building: axi_lite.elf.size'
+' '
+
+14:12:18 Build Finished (took 4s.277ms)
+

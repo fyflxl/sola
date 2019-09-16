@@ -1,0 +1,71 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port irq5 -pg 1 -y 260 -defaultsOSRD
+preplace port DDR -pg 1 -y -50 -defaultsOSRD
+preplace port dir_isa_out -pg 1 -y 320 -defaultsOSRD
+preplace port isa_tri_en -pg 1 -y 460 -defaultsOSRD
+preplace port oe_isa_out -pg 1 -y 200 -defaultsOSRD
+preplace port iocs16 -pg 1 -y 230 -defaultsOSRD
+preplace port dir_isa_sa1 -pg 1 -y 260 -defaultsOSRD
+preplace port dir_isa_in -pg 1 -y 300 -defaultsOSRD
+preplace port isa_rst_drv -pg 1 -y 400 -defaultsOSRD
+preplace port dir_isa_sa2 -pg 1 -y 280 -defaultsOSRD
+preplace port isa_ior -pg 1 -y 380 -defaultsOSRD
+preplace port dir_isa_sd1 -pg 1 -y 220 -defaultsOSRD
+preplace port dir_isa_sd2 -pg 1 -y 240 -defaultsOSRD
+preplace port isa_aen -pg 1 -y 420 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y -30 -defaultsOSRD
+preplace port oe_isa_sd1 -pg 1 -y 100 -defaultsOSRD
+preplace port oe_isa_in -pg 1 -y 180 -defaultsOSRD
+preplace port oe_isa_sd2 -pg 1 -y 120 -defaultsOSRD
+preplace port oe_isa_sa1 -pg 1 -y 140 -defaultsOSRD
+preplace port isa_iow -pg 1 -y 360 -defaultsOSRD
+preplace port oe_isa_sa2 -pg 1 -y 160 -defaultsOSRD
+preplace portBus isa_sa -pg 1 -y 340 -defaultsOSRD
+preplace portBus isa_sd_in -pg 1 -y 200 -defaultsOSRD
+preplace portBus isa_sd_out -pg 1 -y 440 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 330 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 350 -defaultsOSRD
+preplace inst axi_isa_v1_0_0 -pg 1 -lvl 3 -y 220 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -y 150 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 100 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 3 700J -50 NJ -50 NJ
+preplace netloc axi_isa_v1_0_0_oe_isa_sa1 1 3 1 1540
+preplace netloc axi_isa_v1_0_0_dir_isa_out 1 3 1 1450
+preplace netloc irq5_0_1 1 0 3 10J -20 NJ -20 1090J
+preplace netloc axi_isa_v1_0_0_oe_isa_sa2 1 3 1 1530
+preplace netloc axi_isa_v1_0_0_dir_isa_sa1 1 3 1 1480
+preplace netloc isa_sd_in_0_1 1 0 3 NJ 200 700J 220 1050J
+preplace netloc axi_isa_v1_0_0_dir_isa_sa2 1 3 1 1470
+preplace netloc axi_isa_v1_0_0_isa_rst_drv 1 3 1 1410
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 720
+preplace netloc axi_isa_v1_0_0_oe_isa_out 1 3 1 1510
+preplace netloc axi_isa_v1_0_0_dir_isa_in 1 3 1 1460
+preplace netloc axi_isa_v1_0_0_isa_ior 1 3 1 1420
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 0 710
+preplace netloc iocs16_0_1 1 0 3 NJ 230 NJ 230 1080J
+preplace netloc axi_isa_v1_0_0_isa_tri_en 1 3 1 1380
+preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 1 710
+preplace netloc axi_isa_v1_0_0_oe_isa_sd1 1 3 1 1560
+preplace netloc axi_isa_v1_0_0_oe_isa_in 1 3 1 1520
+preplace netloc axi_isa_v1_0_0_isa_sd_out 1 3 1 1390
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 720J -30 NJ -30 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 1 1050
+preplace netloc axi_isa_v1_0_0_oe_isa_sd2 1 3 1 1550
+preplace netloc axi_isa_v1_0_0_isa_iow 1 3 1 1430
+preplace netloc axi_isa_v1_0_0_isa_aen 1 3 1 1400
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 740 80 1040
+preplace netloc axi_isa_v1_0_0_dir_isa_sd1 1 3 1 1500
+preplace netloc axi_isa_v1_0_0_isa_sa 1 3 1 1440
+preplace netloc axi_isa_v1_0_0_dir_isa_sd2 1 3 1 1490
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 -10 730 70 1060
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1070
+levelinfo -pg 1 -30 500 890 1240 1590 -top -80 -bot 850
+",
+}
+{
+   da_axi4_cnt: "5",
+   da_ps7_cnt: "1",
+}

@@ -1,0 +1,11 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sim_1/new/axi_isa_tb.v,1565262035,verilog,,,,axi_isa_tb,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sim_1/new/axilite_tb.v,1564943194,verilog,,,,axilite_tb,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sim_1/new/tb.v,1564900837,verilog,,,,tb,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sources_1/imports/hdl/axi_isa_v1_0.v,1564952329,verilog,,K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sources_1/imports/hdl/axi_isa_v1_0_S00_AXI.v,,axi_isa_v1_0,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sources_1/imports/hdl/axi_isa_v1_0_S00_AXI.v,1564953266,verilog,,K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sim_1/new/axi_isa_tb.v,,axi_isa_v1_0_S00_AXI,,,,,,,,
+K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sources_1/new/ISA_Controller.v,1564843368,verilog,,K:/sola/isa_controller_0802_tb/isa_controller_0802_tb.srcs/sources_1/imports/hdl/axi_isa_v1_0.v,,ISA_Controller,,,,,,,,

@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Aug 14 13:33:35 2019
+# Process ID: 3432
+# Current directory: K:/sola/isa_test_20190814/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14080 K:\sola\isa_test_20190814\project_1\project_1.xpr
+# Log file: K:/sola/isa_test_20190814/project_1/vivado.log
+# Journal file: K:/sola/isa_test_20190814/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project K:/sola/isa_test_20190814/project_1/project_1.xpr
+open_bd_design {K:/sola/isa_test_20190814/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+update_compile_order -fileset sources_1
+startgroup
+set_property -dict [list CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1}] [get_bd_cells processing_system7_0]
+endgroup
+undo
+save_bd_design

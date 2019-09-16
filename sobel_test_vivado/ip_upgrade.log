@@ -1,0 +1,68 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Fri Jul 19 22:51:13 2019
+| Host         : BF-20160906TGWX running 64-bit Service Pack 1  (build 7601)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_sobel_filter_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_sobel_filter_0_0 (xilinx.com:hls:sobel_filter:1.0) from (Rev. 1907191746) to (Rev. 1907192235)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_sobel_filter_0_0'.
+
+
+-Upgrade has removed interface 'inter_pix'
+
+-Upgrade has removed interface 'out_pix'
+
+-Upgrade has added interface 'inter_pix_V_V' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'out_pix_V_V' (xilinx.com:interface:axis:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_sobel_filter_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'inter_pix_TDATA'
+
+-Upgrade has removed port 'inter_pix_TLAST'
+
+-Upgrade has removed port 'inter_pix_TREADY'
+
+-Upgrade has removed port 'inter_pix_TVALID'
+
+-Upgrade has removed port 'out_pix_TDATA'
+
+-Upgrade has removed port 'out_pix_TLAST'
+
+-Upgrade has removed port 'out_pix_TREADY'
+
+-Upgrade has removed port 'out_pix_TVALID'
+
+-Upgrade has added port 'inter_pix_V_V_TDATA'
+
+-Upgrade has added port 'inter_pix_V_V_TREADY'
+
+-Upgrade has added port 'inter_pix_V_V_TVALID'
+
+-Upgrade has added port 'out_pix_V_V_TDATA'
+
+-Upgrade has added port 'out_pix_V_V_TREADY'
+
+-Upgrade has added port 'out_pix_V_V_TVALID'
+
+

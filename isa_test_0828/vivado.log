@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Sep 12 16:40:50 2019
+# Process ID: 7652
+# Current directory: D:/sola/sola/isa_test_0828
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent668 D:\sola\sola\isa_test_0828\project_1.xpr
+# Log file: D:/sola/sola/isa_test_0828/vivado.log
+# Journal file: D:/sola/sola/isa_test_0828\vivado.jou
+#-----------------------------------------------------------
+start_gui
+opeopen_project D:/sola/sola/isa_test_0828/project_1.xINFINFO: [Project 1-313] Project file moved from 'K:/sola/isa_test_0828' since last savScaScanning sources...
+Finished scanning sourcINFINFO: [IP_Flow 19-234] Refreshing IP repositoriINFINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/sola/sola/isa_controller_0828_timeout/isa_controller_0828_timeout.srcsINFINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/vivado1/Vivado/2018.2/data/ipopeopen_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 829.660 ; gain = 130.8updexit
+INFO: [Common 17-206] Exiting Vireset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Sep 12 16:45:49 2019] Launched synth_1...
+Run output will be captured here: D:/sola/sola/isa_test_0828/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Sep 12 16:46:54 2019] Launched impl_1...
+Run output will be captured here: D:/sola/sola/isa_test_0828/project_1.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 12 17:59:24 2019...

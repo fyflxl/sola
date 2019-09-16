@@ -1,0 +1,28 @@
+17:57:32 **** Auto Build of configuration Release for project isa_axilite_int ****
+make all 
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'int main(int, char**)':
+../src/main.cpp:20:6: warning: variable 'rdata' set but not used [-Wunused-but-set-variable]
+  int rdata;
+      ^~~~~
+../src/main.cpp:21:9: warning: unused variable 'wdata' [-Wunused-variable]
+     int wdata;
+         ^~~~~
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_int.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "isa_axilite_int.elf"  ./src/isa_hw.o ./src/main.o   
+'Finished building target: isa_axilite_int.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size isa_axilite_int.elf  |tee "isa_axilite_int.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 419412	   8724	   2784	 430920	  69348	isa_axilite_int.elf
+'Finished building: isa_axilite_int.elf.size'
+' '
+
+17:57:54 Build Finished (took 22s.268ms)
+

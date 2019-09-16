@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2018.2
+Project:             sobel_hls
+Solution:            solution1
+Device target:       xc7z010clg400-1
+Report date:         Fri Jul 19 22:39:08 +0800 2019
+
+#=== Post-Implementation Resource usage ===
+SLICE:           85
+LUT:            210
+FF:             257
+DSP:              4
+BRAM:             0
+SRL:              0
+#=== Final timing ===
+CP required:    10.000
+CP achieved post-synthesis:    10.153
+CP achieved post-implementation:    9.309
+Timing met

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# 
+# Start of session at: Wed Aug 14 17:03:42 2019
+# Process ID: 27368
+# Current directory: K:/sola/int_test_0814_zedboard/int_test_0814_zedboard.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: K:/sola/int_test_0814_zedboard/int_test_0814_zedboard.sdk/webtalk/webtalk.log
+# Journal file: K:/sola/int_test_0814_zedboard/int_test_0814_zedboard.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

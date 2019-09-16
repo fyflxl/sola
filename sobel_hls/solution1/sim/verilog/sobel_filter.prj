@@ -1,0 +1,10 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_slave_CTRL_BUS.v"
+sv xil_defaultlib "AESL_axi_s_inter_pix_V_V.v"
+sv xil_defaultlib "AESL_axi_s_out_pix_V_V.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "sobel_filter.autotb.v"
+sv xil_defaultlib "sobel_filter.v"
+sv xil_defaultlib "sobel_filter_CTRL_BUS_s_axi.v"
+sv xil_defaultlib "sobel_filter_mac_bkb.v"
+

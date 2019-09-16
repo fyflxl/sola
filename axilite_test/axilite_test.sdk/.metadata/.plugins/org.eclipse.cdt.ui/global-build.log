@@ -1,0 +1,1442 @@
+10:43:09 **** Incremental Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++  -o "axilite_test.elf"  ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+    894	    300	      4	   1198	    4ae	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+10:44:42 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 416192	   8724	   2784	 427700	  686b4	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+10:45:08 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 416192	   8724	   2784	 427700	  686b4	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+10:45:39 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 416192	   8724	   2784	 427700	  686b4	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+10:45:59 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+'Finished building: ../src/sobel_hw.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/main.o ./src/sobel_hw.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 419012	   8724	   2784	 430520	  691b8	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+10:46:17 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+make: Nothing to be done for `all'.
+10:47:27 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+../src/sobel_hw.c: In function 'void SOBEL_HW(int, int)':
+../src/sobel_hw.c:34:38: error: 'SOBEL_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+../src/sobel_hw.c:34:38: note: suggested alternative: 'AXILITE_BASEADDR'
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+                                      AXILITE_BASEADDR
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/sobel_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/sobel_hw.o] 错误 1
+10:49:57 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+../src/sobel_hw.c: In function 'void SOBEL_HW(int, int)':
+../src/sobel_hw.c:34:38: error: 'SOBEL_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+../src/sobel_hw.c:34:38: note: suggested alternative: 'AXILITE_BASEADDR'
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+                                      AXILITE_BASEADDR
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/sobel_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/sobel_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/sobel_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/sobel_hw.o] 错误 1
+10:50:23 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+../src/sobel_hw.c: In function 'void SOBEL_HW(int, int)':
+../src/sobel_hw.c:34:38: error: 'SOBEL_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+../src/sobel_hw.c:34:38: note: suggested alternative: 'AXILITE_BASEADDR'
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+                                      AXILITE_BASEADDR
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/sobel_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/sobel_hw.c:2:0:
+../src/sobel_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/sobel_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/sobel_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/sobel_hw.o] 错误 1
+10:50:36 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+../src/axilite_hw.c: In function 'void SOBEL_HW(int, int)':
+../src/axilite_hw.c:34:38: error: 'SOBEL_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+../src/axilite_hw.c:34:38: note: suggested alternative: 'AXILITE_BASEADDR'
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+                                      AXILITE_BASEADDR
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/axilite_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:24:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/axilite_hw.h:25:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/axilite_hw.o] 错误 1
+10:54:03 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+../src/axilite_hw.c: In function 'void SOBEL_HW(int, int)':
+../src/axilite_hw.c:34:38: error: 'SOBEL_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+../src/axilite_hw.c:34:38: note: suggested alternative: 'AXILITE_BASEADDR'
+  unsigned long int PhysicalAddress = SOBEL_BASEADDR;
+                                      ^~~~~~~~~~~~~~
+                                      AXILITE_BASEADDR
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/axilite_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/axilite_hw.o] 错误 1
+10:54:17 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c: In function 'void AXILITE_HW()':
+../src/axilite_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:49:25: error: 'nrows' was not declared in this scope
+     printf("rows %d\n", nrows);
+                         ^~~~~
+../src/axilite_hw.c:50:22: error: 'ncols' was not declared in this scope
+  printf("cols %d\n", ncols);
+                      ^~~~~
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c: In function 'void DMA_HW(int, int, long unsigned int, long unsigned int)':
+../src/axilite_hw.c:71:38: error: 'DMA_BASEADDR' was not declared in this scope
+  unsigned long int PhysicalAddress = DMA_BASEADDR;
+                                      ^~~~~~~~~~~~
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:93:49: error: 'MM2S_DMACR' was not declared in this scope
+  printf("MM2S_DMACR %x\n", ReadReg(dma_address, MM2S_DMACR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:94:49: error: 'S2MM_DMACR' was not declared in this scope
+  printf("S2MM_DMACR %x\n", ReadReg(dma_address, S2MM_DMACR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:101:24: error: 'MM2S_SA' was not declared in this scope
+  WriteReg(dma_address, MM2S_SA, mm2s_addr);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:102:24: error: 'S2MM_DA' was not declared in this scope
+  WriteReg(dma_address, S2MM_DA, s2mm_addr);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:115:24: error: 'S2MM_LENGTH' was not declared in this scope
+  WriteReg(dma_address, S2MM_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:116:24: error: 'MM2S_LENGTH' was not declared in this scope
+  WriteReg(dma_address, MM2S_LENGTH, nrows*ncols*4);
+                        ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:128:36: error: 'MM2S_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, MM2S_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:137:36: error: 'S2MM_DMASR' was not declared in this scope
+   ap_done = ((ReadReg(dma_address, S2MM_DMASR) >> 1) && 0x1);
+                                    ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:145:49: error: 'MM2S_DMASR' was not declared in this scope
+  printf("MM2S_DMASR %x\n", ReadReg(dma_address, MM2S_DMASR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:146:49: error: 'S2MM_DMASR' was not declared in this scope
+  printf("S2MM_DMASR %x\n", ReadReg(dma_address, S2MM_DMASR));
+                                                 ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/axilite_hw.o] 错误 1
+10:54:27 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c: In function 'void AXILITE_HW()':
+../src/axilite_hw.c:47:53: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                                     ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+../src/axilite_hw.c:49:25: error: 'nrows' was not declared in this scope
+     printf("rows %d\n", nrows);
+                         ^~~~~
+../src/axilite_hw.c:50:22: error: 'ncols' was not declared in this scope
+  printf("cols %d\n", ncols);
+                      ^~~~~
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c:52:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:53:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_COLS_DATA , ncols);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:55:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_IER' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_IER , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:56:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_GIE' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_GIE , 0x1);
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:61:32: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL' was not declared in this scope
+  WriteReg(xsobel_base_address, XSOBEL_FILTER_CTRL_BUS_ADDR_AP_CTRL, 0x1);//start
+                                ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+make: *** [src/axilite_hw.o] 错误 1
+10:55:12 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+In file included from ../src/axilite_hw.c:2:0:
+../src/axilite_hw.c: In function 'void AXILITE_HW()':
+../src/axilite_hw.c:46:26: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA' was not declared in this scope
+  WriteReg(xbase_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                          ^
+../src/axilite_hw.h:22:91: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                           ^~~~~~~~~
+../src/axilite_hw.c:46:65: error: 'nrows' was not declared in this scope
+  WriteReg(xbase_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ROWS_DATA, nrows);
+                                                                 ^
+../src/axilite_hw.h:22:106: note: in definition of macro 'WriteReg'
+ #define WriteReg(BaseAddress, RegOffset, Data) *(volatile unsigned int*)((BaseAddress) + (RegOffset)) = (Data)
+                                                                                                          ^~~~
+../src/axilite_hw.c:47:47: error: 'XSOBEL_FILTER_CTRL_BUS_ADDR_ISR' was not declared in this scope
+     printf("ISR %x\n", ReadReg(xbase_address, XSOBEL_FILTER_CTRL_BUS_ADDR_ISR));
+                                               ^
+../src/axilite_hw.h:23:84: note: in definition of macro 'ReadReg'
+ #define ReadReg(BaseAddress, RegOffset) *(volatile unsigned int*)((BaseAddress) + (RegOffset))
+                                                                                    ^~~~~~~~~
+make: *** [src/axilite_hw.o] 错误 1
+11:03:10 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+'Finished building: ../src/axilite_hw.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417580	   8724	   2784	 429088	  68c20	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:03:38 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+'Finished building: ../src/axilite_hw.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417580	   8724	   2784	 429088	  68c20	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:03:52 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+'Finished building: ../src/axilite_hw.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417580	   8724	   2784	 429088	  68c20	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:04:40 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'int main()':
+../src/main.c:10:3: error: 'AXILITE_HW' was not declared in this scope
+   AXILITE_HW(x);
+   ^~~~~~~~~~
+make: *** [src/main.o] 错误 1
+11:04:59 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417588	   8724	   2784	 429096	  68c28	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:12:21 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'double what_time_is_it_now()':
+../src/main.c:19:9: error: 'gettimeofday' was not declared in this scope
+     if (gettimeofday(&time,NULL)){
+         ^~~~~~~~~~~~
+../src/main.c: In function 'int main()':
+../src/main.c:36:3: error: return-statement with no value, in function returning 'int' [-fpermissive]
+   return;
+   ^~~~~~
+make: *** [src/main.o] 错误 1
+11:13:10 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+'Finished building: ../src/axilite_hw.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'int main()':
+../src/main.c:36:3: error: return-statement with no value, in function returning 'int' [-fpermissive]
+   return;
+   ^~~~~~
+make: *** [src/main.o] 错误 1
+11:13:32 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417844	   8724	   2784	 429352	  68d28	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:14:36 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417884	   8724	   2784	 429392	  68d50	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:15:45 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417884	   8724	   2784	 429392	  68d50	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:18:16 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417976	   8724	   2784	 429484	  68dac	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:18:46 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417976	   8724	   2784	 429484	  68dac	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:19:11 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417996	   8724	   2784	 429504	  68dc0	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:20:43 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 417996	   8724	   2784	 429504	  68dc0	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+11:22:40 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418012	   8724	   2784	 429520	  68dd0	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+14:47:14 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/axilite_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/axilite_hw.o" -MMD -MP -MF"src/axilite_hw.d" -MT"src/axilite_hw.o" -o "src/axilite_hw.o" "../src/axilite_hw.c"
+'Finished building: ../src/axilite_hw.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418012	   8724	   2784	 429520	  68dd0	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+14:47:52 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:90:1: error: stray '\327' in program
+ 作者：和其光-同其尘
+ ^
+../src/main.c:90:2: error: stray '\367' in program
+ 作者：和其光-同其尘
+  ^
+../src/main.c:90:3: error: stray '\325' in program
+ 作者：和其光-同其尘
+   ^
+../src/main.c:90:4: error: stray '\337' in program
+ 作者：和其光-同其尘
+    ^
+../src/main.c:90:5: error: stray '\243' in program
+ 作者：和其光-同其尘
+     ^
+../src/main.c:90:6: error: stray '\272' in program
+ 作者：和其光-同其尘
+      ^
+../src/main.c:90:7: error: stray '\272' in program
+ 作者：和其光-同其尘
+       ^
+../src/main.c:90:8: error: stray '\315' in program
+ 作者：和其光-同其尘
+        ^
+../src/main.c:90:9: error: stray '\306' in program
+ 作者：和其光-同其尘
+         ^
+../src/main.c:90:10: error: stray '\344' in program
+ 作者：和其光-同其尘
+          ^
+../src/main.c:90:11: error: stray '\271' in program
+ 作者：和其光-同其尘
+           ^
+../src/main.c:90:12: error: stray '\342' in program
+ 作者：和其光-同其尘
+            ^
+../src/main.c:90:14: error: stray '\315' in program
+ 作者：和其光-同其尘
+              ^
+../src/main.c:90:15: error: stray '\254' in program
+ 作者：和其光-同其尘
+               ^
+../src/main.c:90:16: error: stray '\306' in program
+ 作者：和其光-同其尘
+                ^
+../src/main.c:90:17: error: stray '\344' in program
+ 作者：和其光-同其尘
+                 ^
+../src/main.c:90:18: error: stray '\263' in program
+ 作者：和其光-同其尘
+                  ^
+../src/main.c:90:19: error: stray '\276' in program
+ 作者：和其光-同其尘
+                   ^
+../src/main.c:91:1: error: stray '\300' in program
+ 来源：CSDN
+ ^
+../src/main.c:91:2: error: stray '\264' in program
+ 来源：CSDN
+  ^
+../src/main.c:91:3: error: stray '\324' in program
+ 来源：CSDN
+   ^
+../src/main.c:91:4: error: stray '\264' in program
+ 来源：CSDN
+    ^
+../src/main.c:91:5: error: stray '\243' in program
+ 来源：CSDN
+     ^
+../src/main.c:91:6: error: stray '\272' in program
+ 来源：CSDN
+      ^
+../src/main.c:92:1: error: stray '\324' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+ ^
+../src/main.c:92:2: error: stray '\255' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+  ^
+../src/main.c:92:3: error: stray '\316' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+   ^
+../src/main.c:92:4: error: stray '\304' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+    ^
+../src/main.c:92:5: error: stray '\243' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+     ^
+../src/main.c:92:6: error: stray '\272' in program
+ 原文：https://blog.csdn.net/u013029731/article/details/85042431
+      ^
+../src/main.c:93:1: error: stray '\260' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+ ^
+../src/main.c:93:2: error: stray '\346' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+  ^
+../src/main.c:93:3: error: stray '\310' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+   ^
+../src/main.c:93:4: error: stray '\250' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+    ^
+../src/main.c:93:5: error: stray '\311' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+     ^
+../src/main.c:93:6: error: stray '\371' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+      ^
+../src/main.c:93:7: error: stray '\303' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+       ^
+../src/main.c:93:8: error: stray '\367' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+        ^
+../src/main.c:93:9: error: stray '\243' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+         ^
+../src/main.c:93:10: error: stray '\272' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+          ^
+../src/main.c:93:11: error: stray '\261' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+           ^
+../src/main.c:93:12: error: stray '\276' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+            ^
+../src/main.c:93:13: error: stray '\316' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+             ^
+../src/main.c:93:14: error: stray '\304' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+              ^
+../src/main.c:93:15: error: stray '\316' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+               ^
+../src/main.c:93:16: error: stray '\252' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                ^
+../src/main.c:93:17: error: stray '\262' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                 ^
+../src/main.c:93:18: error: stray '\251' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                  ^
+../src/main.c:93:19: error: stray '\326' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                   ^
+../src/main.c:93:20: error: stray '\367' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                    ^
+../src/main.c:93:21: error: stray '\324' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                     ^
+../src/main.c:93:22: error: stray '\255' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                      ^
+../src/main.c:93:23: error: stray '\264' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                       ^
+../src/main.c:93:24: error: stray '\264' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                        ^
+../src/main.c:93:25: error: stray '\316' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                         ^
+../src/main.c:93:26: error: stray '\304' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                          ^
+../src/main.c:93:27: error: stray '\325' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                           ^
+../src/main.c:93:28: error: stray '\302' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                            ^
+../src/main.c:93:29: error: stray '\243' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                             ^
+../src/main.c:93:30: error: stray '\254' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                              ^
+../src/main.c:93:31: error: stray '\327' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                               ^
+../src/main.c:93:32: error: stray '\252' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                ^
+../src/main.c:93:33: error: stray '\324' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                 ^
+../src/main.c:93:34: error: stray '\330' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                  ^
+../src/main.c:93:35: error: stray '\307' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                   ^
+../src/main.c:93:36: error: stray '\353' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                    ^
+../src/main.c:93:37: error: stray '\270' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                     ^
+../src/main.c:93:38: error: stray '\275' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                      ^
+../src/main.c:93:39: error: stray '\311' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                       ^
+../src/main.c:93:40: error: stray '\317' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                        ^
+../src/main.c:93:41: error: stray '\262' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                         ^
+../src/main.c:93:42: error: stray '\251' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                          ^
+../src/main.c:93:43: error: stray '\316' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                           ^
+../src/main.c:93:44: error: stray '\304' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                            ^
+../src/main.c:93:45: error: stray '\301' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                             ^
+../src/main.c:93:46: error: stray '\264' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                              ^
+../src/main.c:93:47: error: stray '\275' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                               ^
+../src/main.c:93:48: error: stray '\323' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                                ^
+../src/main.c:93:49: error: stray '\243' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                                 ^
+../src/main.c:93:50: error: stray '\241' in program
+ 版权声明：本文为博主原创文章，转载请附上博文链接！
+                                                  ^
+../src/main.c:89:1: error: expected unqualified-id before '--' token
+ ---------------------
+ ^~
+make: *** [src/main.o] 错误 1
+14:48:02 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418160	   8724	   2784	 429668	  68e64	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+14:51:55 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418140	   8724	   2784	 429648	  68e50	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '
+14:54:52 **** Auto Build of configuration Release for project axilite_test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: axilite_test.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "axilite_test.elf"  ./src/axilite_hw.o ./src/main.o   
+'Finished building target: axilite_test.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size axilite_test.elf  |tee "axilite_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 418052	   8724	   2784	 429560	  68df8	axilite_test.elf
+'Finished building: axilite_test.elf.size'
+' '

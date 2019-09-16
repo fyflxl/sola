@@ -1,0 +1,27 @@
+22:29:16 **** Build of configuration Debug for project isa_axilite_int_bare_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../isa_axilite_int_bare_test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function 'void ISAHandler(void*)':
+../src/main.cpp:26:41: warning: too many arguments for format [-Wformat-extra-args]
+     printf("ISAHandler END\n", base_addr);
+                                         ^
+'Finished building: ../src/main.cpp'
+' '
+'Building target: isa_axilite_int_bare_test.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../isa_axilite_int_bare_test_bsp/ps7_cortexa9_0/lib -o "isa_axilite_int_bare_test.elf"  ./src/isa_hw.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: isa_axilite_int_bare_test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size isa_axilite_int_bare_test.elf  |tee "isa_axilite_int_bare_test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  82608	   4156	  23360	 110124	  1ae2c	isa_axilite_int_bare_test.elf
+'Finished building: isa_axilite_int_bare_test.elf.size'
+' '
+
+22:29:36 Build Finished (took 19s.562ms)
+

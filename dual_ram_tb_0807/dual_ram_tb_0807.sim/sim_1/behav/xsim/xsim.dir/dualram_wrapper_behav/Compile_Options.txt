@@ -1,0 +1,1 @@
+-wto "cd8c5463485241c19cc22820a5151900" --incr --debug "typical" --relax --mt "2" -L "blk_mem_gen_v8_4_1" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "dualram_wrapper_behav" "xil_defaultlib.dualram_wrapper" "xil_defaultlib.glbl" -log "elaborate.log" 

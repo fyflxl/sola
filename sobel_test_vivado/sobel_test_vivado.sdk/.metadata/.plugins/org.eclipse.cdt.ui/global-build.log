@@ -1,0 +1,273 @@
+19:27:57 **** Incremental Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/ap_bmp.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/ap_bmp.o" -MMD -MP -MF"src/ap_bmp.d" -MT"src/ap_bmp.o" -o "src/ap_bmp.o" "../src/ap_bmp.cpp"
+../src/ap_bmp.cpp: In function 'int BMP_Close(FILE*)':
+../src/ap_bmp.cpp:79:50: warning: format '%s' expects argument of type 'char*', but argument 2 has type 'FILE* {aka _IO_FILE*}' [-Wformat=]
+     printf("ERROR: could not close %s\n",bmp_file);
+                                                  ^
+../src/ap_bmp.cpp: In function 'int BMP_Read(char*, int, int, unsigned char*, unsigned char*, unsigned char*)':
+../src/ap_bmp.cpp:208:7: warning: unused variable 'file_open' [-Wunused-variable]
+   int file_open;
+       ^~~~~~~~~
+../src/ap_bmp.cpp: In function 'FILE* BMP_InputOpen(char*)':
+../src/ap_bmp.cpp:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/ap_bmp.cpp: In function 'FILE* BMP_OutputOpen(char*)':
+../src/ap_bmp.cpp:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/ap_bmp.cpp'
+' '
+'Building file: ../src/base.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/base.o" -MMD -MP -MF"src/base.d" -MT"src/base.o" -o "src/base.o" "../src/base.c"
+'Finished building: ../src/base.c'
+' '
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+'Finished building: ../src/sobel_hw.c'
+' '
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   7329	    364	      4	   7697	   1e11	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:28:25 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/ap_bmp.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/ap_bmp.o" -MMD -MP -MF"src/ap_bmp.d" -MT"src/ap_bmp.o" -o "src/ap_bmp.o" "../src/ap_bmp.cpp"
+../src/ap_bmp.cpp: In function 'int BMP_Close(FILE*)':
+../src/ap_bmp.cpp:79:50: warning: format '%s' expects argument of type 'char*', but argument 2 has type 'FILE* {aka _IO_FILE*}' [-Wformat=]
+     printf("ERROR: could not close %s\n",bmp_file);
+                                                  ^
+../src/ap_bmp.cpp: In function 'int BMP_Read(char*, int, int, unsigned char*, unsigned char*, unsigned char*)':
+../src/ap_bmp.cpp:208:7: warning: unused variable 'file_open' [-Wunused-variable]
+   int file_open;
+       ^~~~~~~~~
+../src/ap_bmp.cpp: In function 'FILE* BMP_InputOpen(char*)':
+../src/ap_bmp.cpp:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/ap_bmp.cpp: In function 'FILE* BMP_OutputOpen(char*)':
+../src/ap_bmp.cpp:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/ap_bmp.cpp'
+' '
+'Building file: ../src/base.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/base.o" -MMD -MP -MF"src/base.d" -MT"src/base.o" -o "src/base.o" "../src/base.c"
+'Finished building: ../src/base.c'
+' '
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+'Finished building: ../src/sobel_hw.c'
+' '
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424004	   8724	   2784	 435512	  6a538	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:28:39 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424004	   8724	   2784	 435512	  6a538	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:28:45 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424004	   8724	   2784	 435512	  6a538	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:29:56 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424004	   8724	   2784	 435512	  6a538	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:30:20 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424012	   8724	   2784	 435520	  6a540	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:43:45 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424092	   8724	   2784	 435600	  6a590	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:45:11 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_hw.c'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_hw.o" -MMD -MP -MF"src/sobel_hw.d" -MT"src/sobel_hw.o" -o "src/sobel_hw.o" "../src/sobel_hw.c"
+'Finished building: ../src/sobel_hw.c'
+' '
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424092	   8724	   2784	 435600	  6a590	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:48:12 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424104	   8724	   2784	 435612	  6a59c	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:50:50 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424320	   8724	   2784	 435828	  6a674	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+19:58:31 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424248	   8724	   2784	 435756	  6a62c	sobel.elf
+'Finished building: sobel.elf.size'
+' '
+21:58:47 **** Auto Build of configuration Release for project sobel ****
+make all 
+'Building file: ../src/sobel_test.cpp'
+'Invoking: ARM v7 Linux g++ compiler'
+arm-linux-gnueabihf-g++ -Wall -O2 -c -fmessage-length=0 -MT"src/sobel_test.o" -MMD -MP -MF"src/sobel_test.d" -MT"src/sobel_test.o" -o "src/sobel_test.o" "../src/sobel_test.cpp"
+'Finished building: ../src/sobel_test.cpp'
+' '
+'Building target: sobel.elf'
+'Invoking: ARM v7 Linux g++ linker'
+arm-linux-gnueabihf-g++ -static  -o "sobel.elf"  ./src/ap_bmp.o ./src/base.o ./src/sobel_hw.o ./src/sobel_test.o   -lm
+'Finished building target: sobel.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size sobel.elf  |tee "sobel.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 424416	   8724	   2784	 435924	  6a6d4	sobel.elf
+'Finished building: sobel.elf.size'
+' '

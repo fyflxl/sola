@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER isa_20190731
+	OPTION supported_peripherals = (isa_20190731);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = isa_20190731;
+END DRIVER

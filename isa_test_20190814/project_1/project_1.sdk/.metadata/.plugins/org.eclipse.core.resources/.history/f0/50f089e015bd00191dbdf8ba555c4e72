@@ -1,0 +1,92 @@
+/*
+ * Empty C++ Application
+ */
+
+#include "isa_hw.h"
+
+
+int main( int argc, char *argv[])
+{
+
+//	unsigned long int PhysicalAddress = ISA_BASEADDR;
+//	int map_len = 0x20;
+	int fd = open("/dev/axilite2isa", O_RDWR);
+
+//	unsigned char* xbase_address = ISA_FPGA_Create(PhysicalAddress, map_len, fd);
+
+	int time = 1;
+	int rdata = 0x00;
+    if(argc==1)
+    {
+    	printf("Default Read and Write time: %d\n", time);
+    }
+    else
+    {
+    	time = atoi(argv[1]);
+    	printf("Set Read and Write time: %d\n", time);
+    }
+
+    int error = 0;
+    double time1, time2;
+    int x;
+    unsigned int tmp;
+	unsigned int ap_idle;
+	unsigned int ap_done;
+
+    time1 = what_time_is_it_now();
+    for(x=0; x<time; x++)
+    {
+//ISA_WRITE
+//        ISA_FPGA(xbase_address, 0x01, 0xEAC8, x);
+    	while(1)//Wait for IDLE
+    	{
+    		read(fd, &tmp, ISA_CTRL_BUS_ADDR_AP_CTRL);
+    		ap_idle = ((ReadReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL) >> 2) && 0x1);
+    		if(ap_idle)
+    			break;
+    	}
+
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_ISA_MODE, 0x01);//0x01 write; 0x02 read
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_ISA_ADDR, 0xEAC8);
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_WDATA, wdata);
+
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL, 0x1);//Start
+    	while(1)
+    	{
+    		ap_done = ((ReadReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL) >> 1) && 0x1);
+    		if(ap_done)
+    			break;
+    	}
+//ISA_READ
+//        rdata = ISA_FPGA(xbase_address, 0x02, 0xEAC8, x);
+    	while(1)//Wait for IDLE
+    	{
+    		ap_idle = ((ReadReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL) >> 2) && 0x1);
+    		if(ap_idle)
+    			break;
+    	}
+
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_ISA_MODE, 0x02);//0x01 write; 0x02 read
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_ISA_ADDR, 0xEAC8);
+    	WriteReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL, 0x1);//Start
+    	while(1)
+    	{
+    		ap_done = ((ReadReg(xbase_address, ISA_CTRL_BUS_ADDR_AP_CTRL) >> 1) && 0x1);
+    		if(ap_done)
+    			break;
+    	}
+    	rdata = ReadReg(xbase_address, ISA_CTRL_BUS_ADDR_RDATA);
+        if(x!=rdata)
+        	error++;
+    }
+    time2 = what_time_is_it_now();
+    printf("Totoal %d times, error %d times\n", time, error);
+    printf("Total Read and Write %d times: %.6lf s.\n", time, time2 - time1);
+    printf("Average Read and Write: %.6lf s.\n", (time2 - time1)/time);
+
+//	ISA_FPGA_Delete(xbase_address, map_len);
+	close(fd);
+
+    return 0;
+}
+
